@@ -4,7 +4,7 @@
 .btn{
   background-color: #EDF1D6;
   padding: 30px;
-  width: 100%;
+  width: 20%;
   font-size: 20px;
 }
 .btn:hover{
@@ -21,7 +21,3 @@
 .button-general:hover{
   background-color: #9DC08B;
 }
-
-
-
-

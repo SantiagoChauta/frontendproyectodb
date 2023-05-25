@@ -1,0 +1,98 @@
+<shared-navbar></shared-navbar>
+
+<div class="container text-center mt-5">
+  <h4 class="mb-5">Registrar Cliente</h4>
+
+
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="tipoDocumento">Tipo de Documento</label>
+        <select  #tipoDocumento
+          name="tipo_documento" class ="form-control">
+          <option value="CC" selected>Cédula de Ciudadanía</option>
+          <option value="CE">Cédula de Extranjería</option>
+        </select>
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="identificacion">Numero de identificacion</label> <input
+           type="text" class="form-control"
+          #numeroDocumento />
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="nombre">Nombre</label> <input
+          type="text" class="form-control" #nombre/>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="apellido">Apellido</label> <input
+         type="text" class="form-control"
+          #apellido />
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="direccion">Direccion</label> <input
+           type="text" class="form-control"
+          #direccion />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="telefono">Telefono</label> <input
+           type="text" class="form-control"
+          #telefono />
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="ciudad">Ciudad</label> <input
+          type="text" class="form-control" #ciudad />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="email">Email</label> <input
+          type="text" class="form-control" #email />
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="tipoIdRecomendo">Tipo Documento Recomendo</label>
+        <select  #tipoIdRecomendo
+          name="tipo_documento" class ="form-control" (change)="habilitarNumeroDocumento()">
+          <option value=null selected> Seleccionar</option>
+          <option value="CC">Cédula de Ciudadanía</option>
+          <option value="CE">Cédula de Extranjería</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="representante_capto">Numero Documento
+          recomendo</label> <input type="text"
+          class="form-control" #idRecomendo disabled >
+      </div>
+    </div>
+  </div>
+
+  <button class="btn button-general mt-4" (click)="registrarCliente()">Guardar</button>
+</div>
