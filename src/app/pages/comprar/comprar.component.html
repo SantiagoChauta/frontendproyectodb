@@ -37,9 +37,8 @@
 
         <div class="col-9">
           <div class="row">
-            <select class="form-control ml-5">
-              <option *ngFor="let categoria of subcategorias">{{categoria.nombre}}</option>
-
+            <select class="form-control ml-5" (change)="nombre()" #subcategoria>
+              <option *ngFor="let categoria of subcategorias" value="{{categoria.id_categoria}}"> {{categoria.nombre}}</option>
             </select>
           </div>
 

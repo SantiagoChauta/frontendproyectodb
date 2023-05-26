@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 import { CategoriaService } from '../../services/categoria/categoria.service';
 import { Categoria } from "src/app/interfaces/tablas.interfaces";
@@ -12,6 +12,10 @@ export class ComprarPageComponent implements OnInit{
 
   categorias:Categoria[];
   subcategorias:Categoria[];
+
+  @ViewChild('subcategoria')
+  private tagselected!:ElementRef<HTMLInputElement>;
+
   constructor(private categoriaService: CategoriaService){}
 
   ngOnInit(): void {
@@ -33,6 +37,10 @@ export class ComprarPageComponent implements OnInit{
         this.subcategorias = categorias
       }
     )
+  }
+
+  nombre(){
+    console.log(this.tagselected.nativeElement.value);
   }
 
 }

@@ -18,9 +18,9 @@ export interface Cliente {
 
   email: String;
 
-  idRepresentante: String|null;
+  idRepresentante?: String|null;
 
-  tipoIdRepresentante: String |null;
+  tipoIdRepresentante?: String |null;
 
   idRecomendo?: String | null;
 

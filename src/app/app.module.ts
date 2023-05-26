@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClienteService } from './services/cliente/cliente.service';
 import { CategoriaService } from './services/categoria/categoria.service';
-import { ServicesModule } from './services/services.module';
 import { PagesModule } from './pages/pages.module';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     HttpClientModule,
     PagesModule,
-    ServicesModule,
     SharedModule
   ],
   providers: [
