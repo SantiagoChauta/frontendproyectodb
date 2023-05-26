@@ -20,11 +20,11 @@
 
 .btn {
   background-color: #9dc08b;
-  padding-left: 50px;
-  padding: 35px 35px;
-  text-align: left;
+  padding: 15px 15px;
+  text-align: center;
+  margin-bottom: 10px;
 }
-.btn:hover{
+.btn:hover, .boton_carrito:hover{
   background-color: #609966;
 }
 .image-container img{
@@ -46,4 +46,10 @@
 
 .form-control{
   width: 350px;
+}
+
+.boton_carrito{
+  background-color: #9dc08b;
+  border: 2px;
+  border-radius: 30px;
 }
