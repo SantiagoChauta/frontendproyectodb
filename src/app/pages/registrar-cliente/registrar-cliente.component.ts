@@ -18,6 +18,8 @@ export class RegistrarClientePageComponent implements OnInit{
 
   private clientes:Cliente[]
 
+  private cliente:Cliente;
+
   @ViewChild('tipoDocumento')
   private tagTipoDocumento!:ElementRef<HTMLInputElement>;
 
@@ -70,16 +72,17 @@ export class RegistrarClientePageComponent implements OnInit{
   }
 
   registrarCliente(){
-/*
-    this.cliente.tipoDocumento = this.tagTipoDocumento.nativeElement.value;
-    this.cliente.cedula = this.tagNumeroDocumento.nativeElement.value;
-    this.cliente.nombre = this.tagNombre.nativeElement.value;
-    this.cliente.apellido = this.tagApellido.nativeElement.value;
-    this.cliente.direccion = this.tagDireccion.nativeElement.value;
-    this.cliente.telefono = this.tagTelefono.nativeElement.value;
-    this.cliente.ciudad = this.tagCiudad.nativeElement.value;
-    this.cliente.email = this.tagEmail.nativeElement.value;
 
+    this.cliente ={
+      tipoDocumento:this.tagTipoDocumento.nativeElement.value,
+      cedula: this.tagNumeroDocumento.nativeElement.value,
+      nombre: this.tagNombre.nativeElement.value,
+      apellido: this.tagApellido.nativeElement.value,
+      direccion: this.tagDireccion.nativeElement.value,
+      telefono: this.tagTelefono.nativeElement.value,
+      ciudad: this.tagCiudad.nativeElement.value,
+      email: this.tagEmail.nativeElement.value
+    }
     if(this.tagTipoIdRecomendo.nativeElement.value=="null"){
       this.cliente.tipoIdRecomendo = null;
       this.cliente.idRecomendo = null;
@@ -92,9 +95,9 @@ export class RegistrarClientePageComponent implements OnInit{
         this.cliente.idRecomendo = this.tagIdRecomendo.nativeElement.value;
       }
 
-    }*/
-
-
+    }
+    console.log(this.cliente)
+    this.clienteService.insertarCliente(this.cliente);
 
   }
 

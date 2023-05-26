@@ -4,15 +4,15 @@ import { RegistrarClientePageComponent } from "./registrar-cliente/registrar-cli
 import { CommonModule } from "@angular/common";
 import { SharedModule } from "../shared/shared.module";
 import { ComprarPageComponent } from "./comprar/comprar.component";
+import { LoginPageComponent } from "./login/login.component";
 
 
 @NgModule({
   declarations:[
     ComprarPageComponent,
     HomePageComponent,
+    LoginPageComponent,
     RegistrarClientePageComponent
-
-
   ],
   imports:[
     CommonModule,
@@ -21,6 +21,7 @@ import { ComprarPageComponent } from "./comprar/comprar.component";
   exports:[
     ComprarPageComponent,
     HomePageComponent,
+    LoginPageComponent,
     RegistrarClientePageComponent
   ]
 })

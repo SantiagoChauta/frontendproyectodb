@@ -3,10 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './pages/home/home.component';
 import { RegistrarClientePageComponent } from './pages/registrar-cliente/registrar-cliente.component';
 import { ComprarPageComponent } from './pages/comprar/comprar.component';
+import { LoginPageComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path:'',
+    component:LoginPageComponent
+  },
+  {
+    path: 'home',
     component: HomePageComponent
   },
   {
@@ -16,10 +21,6 @@ const routes: Routes = [
   {
     path:'comprar',
     component:ComprarPageComponent
-  },
-  {
-    path: '**',
-    redirectTo: ''
   }
 ];
 

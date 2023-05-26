@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from 'src/app/interfaces/tablas.interfaces';
-import { HttpClient , HttpHeaders,HttpParams} from '@angular/common/http';
+import { HttpClient , HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs'
-import {map} from 'rxjs/operators'
-
+import { Router } from "@angular/router";
 
 
 @Injectable()
@@ -13,13 +12,21 @@ export class ClienteService {
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router) { }
 
   getClientes(): Observable<Cliente[]>{
-    return this.http.get<Cliente[]>(`${this.urlEndPoint}/todos`)
+    return  this.http.get<Cliente[]>(`${this.urlEndPoint}/todos`)
   }
 
   insertarCliente(cliente:Cliente){
-    return this.http.post(`${this.urlEndPoint}/insertar`,cliente)
+    this.http.post(`${this.urlEndPoint}/insertar`,cliente).subscribe(
+      response =>{
+        console.log(response)
+      },
+      error=>{
+        console.log(error)
+      }
+    );
+    this.router.navigate(['home']);
   }
 }

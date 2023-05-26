@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
+=======
+import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
+>>>>>>> master
 import { Router } from "@angular/router";
 import { CategoriaService } from '../../services/categoria/categoria.service';
 import { ProductoService } from "src/app/services/producto/producto.service";
@@ -14,12 +18,20 @@ export class ComprarPageComponent implements OnInit{
 
   categorias:Categoria[];
   subcategorias:Categoria[];
+<<<<<<< HEAD
   productos:Producto[];
   @ViewChild('id_categoria')
   id_categoria : ElementRef<HTMLInputElement>;
 
 
   constructor(private categoriaService: CategoriaService, private productoService: ProductoService){}
+=======
+
+  @ViewChild('subcategoria')
+  private tagselected!:ElementRef<HTMLInputElement>;
+
+  constructor(private categoriaService: CategoriaService){}
+>>>>>>> master
 
   ngOnInit(): void {
     this.categoriaService.getCategorias().subscribe(
@@ -49,6 +61,7 @@ export class ComprarPageComponent implements OnInit{
     )
   }
 
+<<<<<<< HEAD
   productosCategoria(){
     this.productoService.getProductosCategoria(parseInt(this.id_categoria.nativeElement.value)).subscribe(
       productos => {
@@ -60,4 +73,10 @@ export class ComprarPageComponent implements OnInit{
   comprar(id:number){
 
   }
+=======
+  nombre(){
+    console.log(this.tagselected.nativeElement.value);
+  }
+
+>>>>>>> master
 }
