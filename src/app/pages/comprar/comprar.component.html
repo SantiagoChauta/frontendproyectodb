@@ -33,79 +33,11 @@
         </select>
       </div>
 
-<<<<<<< HEAD
       <div class="col">
         <div class="row mt-5">
           <div class="col-sm" *ngFor="let producto of productos">
             <div class="image-container">
               <img src="../../assets/images/products/aceite_de_flores.png" alt="{{producto.nombre}}" id="imagen" />
-=======
-          <h3 class="mb-5">Categorias</h3>
-          <div *ngFor="let categoria of categorias">
-            <button class="btn btn-lg btn-block" (click)="cambiar(categoria.id_categoria)">{{categoria.nombre}}</button>
-          </div>
-        </div>
-
-        <div class="col-9">
-          <div class="row">
-            <select class="form-control ml-5" (change)="nombre()" #subcategoria>
-              <option *ngFor="let categoria of subcategorias" value="{{categoria.id_categoria}}"> {{categoria.nombre}}</option>
-            </select>
-          </div>
-
-          <div class="col">
-            <div class="row mt-5">
-              <div class="col-sm">
-                <div class="image-container">
-                  <img
-                    src="../../assets/images/products/aceite_de_flores.png"
-                    alt="aceite de flores"
-                    id="imagen"
-                  />
-                </div>
-
-                <p>Aceite de flores</p>
-                <p>$10.000</p>
-              </div>
-
-              <div class="col-sm">
-                <div class="image-container">
-                  <img
-                    src="../../assets/images/products/aceite_de_flores.png"
-                    alt="aceite de flores"
-                    id="imagen"
-                  />
-                </div>
-
-                <p>Aceite de flores</p>
-                <p>$10.000</p>
-              </div>
-              <div class="col-sm">
-                <div class="image-container">
-                  <img
-                    src="../../assets/images/products/aceite_de_flores.png"
-                    alt="aceite de flores"
-                    id="imagen"
-                  />
-                </div>
-
-                <p>Aceite de flores</p>
-                <p>$10.000</p>
-              </div>
-              <div class="col-sm">
-                <div class="image-container">
-                  <img
-                    src="../../assets/images/products/aceite_de_flores.png"
-                    alt="aceite de flores"
-                    id="imagen"
-                  />
-                </div>
-
-                <p>Aceite de flores</p>
-                <p>$10.000</p>
-              </div>
-
->>>>>>> master
             </div>
 
             <p>{{producto.nombre}}</p>

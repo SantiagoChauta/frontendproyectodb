@@ -1,4 +1,7 @@
-
+export interface Usuario{
+  usuario:String;
+  password:String;
+}
 
 
 export interface Cliente {

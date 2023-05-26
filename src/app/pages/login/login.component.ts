@@ -1,8 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {  Router } from '@angular/router';
-import { Cliente } from 'src/app/interfaces/tablas.interfaces';
-import { ClienteService } from 'src/app/services/cliente/cliente.service';
-import { LoginService } from 'src/app/services/login/login.service';
+import { Usuario } from 'src/app/interfaces/tablas.interfaces';
+import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 
  @Component({
   selector:'pages-login',
@@ -11,18 +10,19 @@ import { LoginService } from 'src/app/services/login/login.service';
  })
  export class LoginPageComponent implements OnInit{
 
-  constructor( private loginService:ClienteService,private router:Router){}
+  constructor( private usuarioService:UsuarioService,private router:Router){}
 
-  private clientes:Cliente[];
+  private usuario:Usuario[];
 
   ngOnInit(): void {
-    this.loginService.getClientes().subscribe(
-      clientes => {
-        this.clientes = clientes
+    this.usuarioService.getUsuarios().subscribe(
+      usuario => {
+        this.usuario = usuario
       }
+      
     )
+    
   }
-
 
   @ViewChild('user')
   private user:ElementRef<HTMLInputElement>;
@@ -33,24 +33,15 @@ import { LoginService } from 'src/app/services/login/login.service';
 
 
   iniciarSesion(){
-    const usuario = this.user.nativeElement.value;
+    const us = this.user.nativeElement.value;
     const pass = this.password.nativeElement.value;
 
-    const tipoId = usuario.slice(1,3);
-    const numId = usuario.slice(3);
-
-    this.clientes.forEach(element => {
-      console.log(element.nombre)
-      if (element.tipoDocumento == tipoId && element.cedula==numId &&element.cedula==pass){
-        console.log("entro")
+    this.usuario.forEach(element => {
+      if(us == element.usuario){
         this.router.navigate(['home']);
       }
     });
 
-
-
-
   }
-
 
  }
