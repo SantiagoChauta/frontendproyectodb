@@ -33,3 +33,14 @@ export interface Categoria{
   nombre:String;
   supercategoria?:number|null;
 }
+
+export interface Producto{
+  id_producto: number;
+  id_categoria: number;
+  nombre: String;
+  foto: String;
+  descripcion: String;
+  iva: number;
+  precio: number;
+  stock: number;
+}
