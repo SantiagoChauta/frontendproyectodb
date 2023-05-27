@@ -1,17 +1,6 @@
 <shared-navbar></shared-navbar>
 <!-- Contenedor para centrar la barra de búsqueda -->
 
-<!-- Barra de búsqueda -->
-<div class="input-group rounded-pill max-w-600 mx-auto">
-  <!-- Input para buscar productos -->
-  <input type="text" class="form-control search-bar" placeholder="Buscar un producto" />
-  <!-- Botón de búsqueda con icono de lupa -->
-  <div class="input-group-append">
-    <button class="btn-buscar" type="button">
-      <img src="../../assets/icon/search.svg" alt="Icono de lupa" class="icono-lupa" />
-    </button>
-  </div>
-</div>
 
 <div class="container-fluid mt-5">
   <div class="row">
@@ -27,24 +16,13 @@
     <div class="col-9">
       <div class="row">
         <select class="form-control ml-5" (change)="productosCategoria()" #id_categoria>
-          <option *ngFor="let categoria of subcategorias" value="{{categoria.id_categoria}}">{{categoria.nombre}}
+          <option *ngFor="let categoria of subcategorias" name="index_categoria" value="{{categoria.id_categoria}}">{{categoria.nombre}}
           </option>
 
         </select>
       </div>
 
-      <div class="col">
-        <div class="row mt-5">
-          <div class="col-sm" *ngFor="let producto of productos">
-
-
-            <p>{{producto.nombre_producto}}</p>
-            <p>${{producto.precio}}</p>
-            <p>{{producto.stock}} Unidades disponibles</p>
-            <button class="boton_carrito" (click)="comprar(producto.id_producto)">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
+      <page-comprar-catalogo [productos]="productos"></page-comprar-catalogo>
     </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {  Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/tablas.interfaces';
-import { UsuarioService } from 'src/app/services/usuario/usuario.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
  @Component({
   selector:'pages-login',

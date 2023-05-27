@@ -4,7 +4,9 @@ import { Categoria } from 'src/app/interfaces/tablas.interfaces';
 import { HttpClient } from '@angular/common/http';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CategoriaService {
 
   constructor(private http:HttpClient) { }

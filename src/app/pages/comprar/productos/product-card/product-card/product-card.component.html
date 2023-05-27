@@ -1,0 +1,13 @@
+<div class="card">
+  <figure>
+    <img [src]="producto.foto" alt="t-shirt">
+  </figure>
+  <section class="details">
+    <div class="min-details">
+      <h1>{{producto.nombre_producto}} <span>Stock: {{producto.stock}}</span></h1>
+      <h1 class="price">${{producto.precio}}</h1>
+    </div>
+
+    <a href="#" class="btn">add to cart</a>
+  </section>
+</div>

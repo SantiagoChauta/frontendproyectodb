@@ -21,13 +21,13 @@ export interface Cliente {
 
   email: String;
 
-  idRepresentante?: String|null;
+  idRepresentante?: String;
 
-  tipoIdRepresentante?: String |null;
+  tipoIdRepresentante?: String;
 
-  idRecomendo?: String | null;
+  idRecomendo?: String ;
 
-  tipoIdRecomendo?: String | null;
+  tipoIdRecomendo?: String;
 
 }
 
@@ -52,4 +52,22 @@ export interface Producto{
    region:            string;
    id_pais:           number;
    pais:              string;
+}
+
+export interface Representante {
+  cedula:        string;
+  tipoDocumento: string;
+  nombre:        string;
+  apellido:      string;
+  direccion:     string;
+  telefono:      string;
+  email:         string;
+  genero:        string;
+  estado?:        string;
+  f_nacimiento:  string;
+  f_contrato:    string;
+  idRegion?:      number;
+  idPais?:        number;
+  idManager?:     null;
+  tipoIdManager?: null;
 }

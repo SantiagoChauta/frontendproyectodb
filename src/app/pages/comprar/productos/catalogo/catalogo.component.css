@@ -1,0 +1,13 @@
+/* Para darle un estilo al botón de búsqueda */
+.btn-buscar {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.boton_carrito{
+  background-color: #9dc08b;
+  border: 2px;
+  border-radius: 30px;
+}

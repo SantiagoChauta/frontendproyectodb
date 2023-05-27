@@ -1,11 +1,13 @@
 import { NgModule } from "@angular/core";
 import { NavBarComponent } from "./components/navbar/navbar.component";
 import { CommonModule } from "@angular/common";
+import { ModalWindowComponent } from './components/modal-window/modal-window/modal-window.component';
 
 
 @NgModule({
   declarations:[
     NavBarComponent,
+    ModalWindowComponent,
 
   ],
 
@@ -16,6 +18,7 @@ import { CommonModule } from "@angular/common";
   ],
   exports:[
     NavBarComponent,
+    ModalWindowComponent
   ]
 })
 export class SharedModule{

@@ -6,15 +6,23 @@ import { SharedModule } from "../shared/shared.module";
 import { ComprarPageComponent } from "./comprar/comprar.component";
 import { LoginPageComponent } from "./login/login.component";
 import { ShoppingCartPageComponent } from './shopping-cart/shopping-cart/shopping-cart.component';
+import { RegistrarRepresentantePageComponent } from "./registrar-representante/registrar-representante.component";
+import { CatalogoComponent } from './comprar/productos/catalogo/catalogo.component';
+import { ProductCardComponent } from './comprar/productos/product-card/product-card/product-card.component';
 
 
 @NgModule({
   declarations:[
+    CatalogoComponent,
     ComprarPageComponent,
     HomePageComponent,
     LoginPageComponent,
+    ProductCardComponent,
     RegistrarClientePageComponent,
-    ShoppingCartPageComponent
+    RegistrarRepresentantePageComponent,
+    ShoppingCartPageComponent,
+    CatalogoComponent,
+    ProductCardComponent
   ],
   imports:[
     CommonModule,
@@ -25,6 +33,7 @@ import { ShoppingCartPageComponent } from './shopping-cart/shopping-cart/shoppin
     HomePageComponent,
     LoginPageComponent,
     RegistrarClientePageComponent,
+    RegistrarRepresentantePageComponent,
     ShoppingCartPageComponent
   ]
 })

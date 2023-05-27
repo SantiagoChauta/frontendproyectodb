@@ -1,9 +1,9 @@
 import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
-import { Router } from "@angular/router";
-import { CategoriaService } from '../../services/categoria/categoria.service';
-import { ProductoService } from "src/app/services/producto/producto.service";
+import { CategoriaService } from '../../services/categoria.service';
+import { ProductoService } from "src/app/services/producto.service";
 import { Categoria } from "src/app/interfaces/tablas.interfaces";
 import { Producto } from "src/app/interfaces/tablas.interfaces";
+import { NgModel } from "@angular/forms";
 
 @Component({
   selector:'pages-comprar',
@@ -15,6 +15,7 @@ export class ComprarPageComponent implements OnInit{
   categorias:Categoria[];
   subcategorias:Categoria[];
   productos:Producto[];
+
   id_region:number;
   id_pais:number;
 
@@ -51,20 +52,20 @@ export class ComprarPageComponent implements OnInit{
     this.categoriaService.getSubCategorias(id).subscribe(
       categorias => {
         this.subcategorias = categorias
+
       }
     )
     this.productosCategoria();
-
   }
 
   productosCategoria(){
     this.productoService.getProductosCategoria(1,1,parseInt(this.id_categoria.nativeElement.value)).subscribe(
       productos => {
         this.productos = productos
-
       }
     )
   }
+
 
   comprar(id:number){
 

@@ -1,0 +1,97 @@
+
+<shared-navbar></shared-navbar>
+<shared-modal-window></shared-modal-window>
+<div class="container text-center mt-5">
+  <h4 class="mb-5">Registrar Representante</h4>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="tipoDocumento">Tipo de Documento</label>
+        <select  #tipoDocumento
+          name="tipo_documento" class ="form-control">
+          <option value="CC" selected>Cédula de Ciudadanía</option>
+          <option value="CE">Cédula de Extranjería</option>
+        </select>
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="identificacion">Numero de identificacion</label> <input
+           type="text" class="form-control"
+          #numeroDocumento />
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="nombre">Nombre</label> <input
+          type="text" class="form-control" #nombre/>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="apellido">Apellido</label> <input
+         type="text" class="form-control"
+          #apellido />
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="direccion">Direccion</label> <input
+           type="text" class="form-control"
+          #direccion />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="telefono">Telefono</label> <input
+           type="text" class="form-control"
+          #telefono />
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="email">Email</label> <input
+          type="text" class="form-control" #email />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="genero">Tipo Documento Recomendo</label>
+        <select  #genero
+          name="genero" class ="form-control" >
+          <option value=m selected>Masculino</option>
+          <option value="f">Femenino</option>
+          <option value="na">Otros</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="fecha_nacimiento">Fecha de nacimiento</label>
+        <input type="date" class="form-control" id="fecha_nacimiento" #fechanacimiento/>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="fecha_contrato">Fecha de Contratación</label>
+        <input type="date" class="form-control" id="fecha_contrato" #fechacontrato />
+      </div>
+    </div>
+  </div>
+  <button class="btn button-general mt-4" data-toggle="modal" data-target="#exampleModalCenter" (click)="registrarRepresentante()">Guardar</button>
+</div>

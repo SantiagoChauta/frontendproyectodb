@@ -5,6 +5,7 @@ import { RegistrarClientePageComponent } from './pages/registrar-cliente/registr
 import { ComprarPageComponent } from './pages/comprar/comprar.component';
 import { LoginPageComponent } from './pages/login/login.component';
 import { ShoppingCartPageComponent } from './pages/shopping-cart/shopping-cart/shopping-cart.component';
+import { RegistrarRepresentantePageComponent } from './pages/registrar-representante/registrar-representante.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'registrar-cliente',
     component: RegistrarClientePageComponent
+  },
+  {
+    path:'registrar-representante',
+    component:RegistrarRepresentantePageComponent
   },
   {
     path:'comprar',

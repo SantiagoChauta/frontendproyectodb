@@ -3,7 +3,8 @@
 
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core'
 import { Cliente } from 'src/app/interfaces/tablas.interfaces';
-import { ClienteService } from '../../services/cliente/cliente.service';
+import { ClienteService } from 'src/app/services/cliente.service';
+
 
 
 @Component({
@@ -15,8 +16,6 @@ import { ClienteService } from '../../services/cliente/cliente.service';
 export class RegistrarClientePageComponent {
 
   constructor(private clienteService:ClienteService){}
-
-  private clientes:Cliente[]
 
   private cliente:Cliente;
 
@@ -93,13 +92,7 @@ export class RegistrarClientePageComponent {
         alert("Cliente insertado con Exito")
       },
       error=>{
-        if(error.status == 400){
-          alert("Usuario ya existe");
-        }
-        if(error.status == 401){
-          alert("Usuario no autorizado");
-        }
-
+        alert(error.error)
       }
     );
 
