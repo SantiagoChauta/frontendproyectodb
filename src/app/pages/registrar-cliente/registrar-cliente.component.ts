@@ -12,7 +12,7 @@ import { ClienteService } from '../../services/cliente/cliente.service';
   styleUrls: ['./registrar-cliente.component.css']
 })
 
-export class RegistrarClientePageComponent implements OnInit{
+export class RegistrarClientePageComponent {
 
   constructor(private clienteService:ClienteService){}
 
@@ -49,15 +49,6 @@ export class RegistrarClientePageComponent implements OnInit{
 
   @ViewChild('idRecomendo')
   private tagIdRecomendo!:ElementRef<HTMLInputElement>;
-
-  ngOnInit(): void {
-    this.clienteService.getClientes().subscribe(
-      clientes => {
-        this.clientes = clientes
-        console.log(clientes)
-      }
-    )
-  }
 
   habilitarNumeroDocumento(){
 
@@ -97,7 +88,20 @@ export class RegistrarClientePageComponent implements OnInit{
 
     }
     console.log(this.cliente)
-    this.clienteService.insertarCliente(this.cliente);
+    this.clienteService.insertarCliente(this.cliente).subscribe(
+      response =>{
+        alert("Cliente insertado con Exito")
+      },
+      error=>{
+        if(error.status == 400){
+          alert("Usuario ya existe");
+        }
+        if(error.status == 401){
+          alert("Usuario no autorizado");
+        }
+
+      }
+    );
 
   }
 

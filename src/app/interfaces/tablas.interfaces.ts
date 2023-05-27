@@ -38,12 +38,18 @@ export interface Categoria{
 }
 
 export interface Producto{
-  id_producto: number;
-  id_categoria: number;
-  nombre: String;
-  foto: String;
-  descripcion: String;
-  iva: number;
-  precio: number;
-  stock: number;
+  id_producto:       number;
+   nombre_producto:   string;
+   foto:              string;
+   descripcion:       string;
+   precio:            number;
+   iva:               number;
+   id_categoria:      number;
+   categoria:         string;
+   id_supercategoria: number;
+   stock:             number;
+   id_region:         number;
+   region:            string;
+   id_pais:           number;
+   pais:              string;
 }

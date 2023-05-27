@@ -18,15 +18,7 @@ export class ClienteService {
     return  this.http.get<Cliente[]>(`${this.urlEndPoint}/todos`)
   }
 
-  insertarCliente(cliente:Cliente){
-    this.http.post(`${this.urlEndPoint}/insertar`,cliente).subscribe(
-      response =>{
-        console.log(response)
-      },
-      error=>{
-        console.log(error)
-      }
-    );
-    this.router.navigate(['home']);
+  insertarCliente(cliente:Cliente):Observable<String>{
+    return this.http.post<String>(`${this.urlEndPoint}/insertar`,cliente)
   }
 }

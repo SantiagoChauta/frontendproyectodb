@@ -5,6 +5,7 @@ import { CommonModule } from "@angular/common";
 import { SharedModule } from "../shared/shared.module";
 import { ComprarPageComponent } from "./comprar/comprar.component";
 import { LoginPageComponent } from "./login/login.component";
+import { ShoppingCartPageComponent } from './shopping-cart/shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { LoginPageComponent } from "./login/login.component";
     ComprarPageComponent,
     HomePageComponent,
     LoginPageComponent,
-    RegistrarClientePageComponent
+    RegistrarClientePageComponent,
+    ShoppingCartPageComponent
   ],
   imports:[
     CommonModule,
@@ -22,7 +24,8 @@ import { LoginPageComponent } from "./login/login.component";
     ComprarPageComponent,
     HomePageComponent,
     LoginPageComponent,
-    RegistrarClientePageComponent
+    RegistrarClientePageComponent,
+    ShoppingCartPageComponent
   ]
 })
 export class PagesModule{

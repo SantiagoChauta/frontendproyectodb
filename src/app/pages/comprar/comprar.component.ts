@@ -15,6 +15,9 @@ export class ComprarPageComponent implements OnInit{
   categorias:Categoria[];
   subcategorias:Categoria[];
   productos:Producto[];
+  id_region:number;
+  id_pais:number;
+
   @ViewChild('id_categoria')
   id_categoria : ElementRef<HTMLInputElement>;
 
@@ -22,6 +25,9 @@ export class ComprarPageComponent implements OnInit{
   constructor(private categoriaService: CategoriaService, private productoService: ProductoService){}
 
   ngOnInit(): void {
+    this.id_region=1;
+    this.id_pais=1;
+
     this.categoriaService.getCategorias().subscribe(
       categorias => this.categorias = categorias
     );
@@ -32,7 +38,7 @@ export class ComprarPageComponent implements OnInit{
       }
     )
 
-    this.productoService.getProductosCategoria(7).subscribe(
+    this.productoService.getProductosCategoria(1,1,7).subscribe(
       productos => {
         this.productos = productos
         console.log(productos)
@@ -47,12 +53,15 @@ export class ComprarPageComponent implements OnInit{
         this.subcategorias = categorias
       }
     )
+    this.productosCategoria();
+
   }
 
   productosCategoria(){
-    this.productoService.getProductosCategoria(parseInt(this.id_categoria.nativeElement.value)).subscribe(
+    this.productoService.getProductosCategoria(1,1,parseInt(this.id_categoria.nativeElement.value)).subscribe(
       productos => {
         this.productos = productos
+
       }
     )
   }

@@ -36,11 +36,9 @@
       <div class="col">
         <div class="row mt-5">
           <div class="col-sm" *ngFor="let producto of productos">
-            <div class="image-container">
-              <img src="../../assets/images/products/aceite_de_flores.png" alt="{{producto.nombre}}" id="imagen" />
-            </div>
 
-            <p>{{producto.nombre}}</p>
+
+            <p>{{producto.nombre_producto}}</p>
             <p>${{producto.precio}}</p>
             <p>{{producto.stock}} Unidades disponibles</p>
             <button class="boton_carrito" (click)="comprar(producto.id_producto)">Agregar al carrito</button>

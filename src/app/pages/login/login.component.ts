@@ -19,9 +19,7 @@ import { UsuarioService } from 'src/app/services/usuario/usuario.service';
       usuario => {
         this.usuario = usuario
       }
-      
     )
-    
   }
 
   @ViewChild('user')
@@ -30,18 +28,23 @@ import { UsuarioService } from 'src/app/services/usuario/usuario.service';
   @ViewChild('password')
   private password:ElementRef<HTMLInputElement>;
 
-
-
   iniciarSesion(){
     const us = this.user.nativeElement.value;
     const pass = this.password.nativeElement.value;
-
     this.usuario.forEach(element => {
       if(us == element.usuario){
-        this.router.navigate(['home']);
+        this.usuarioService.conectarse(us,pass).subscribe(
+          response =>{
+            this.router.navigate(['home'])
+            console.log("la respuesta es"+response)
+          },
+          error =>{
+            alert("Usuario o Contraseña incorrecta")
+          }
+        )
+
       }
     });
-
   }
 
  }
