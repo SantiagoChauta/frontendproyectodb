@@ -56,6 +56,7 @@ export class ComprarPageComponent implements OnInit{
       }
     )
     this.productosCategoria();
+    this.productosCategoria();
   }
 
   productosCategoria(){

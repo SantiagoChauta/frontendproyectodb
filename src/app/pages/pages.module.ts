@@ -9,6 +9,7 @@ import { ShoppingCartPageComponent } from './shopping-cart/shopping-cart/shoppin
 import { RegistrarRepresentantePageComponent } from "./registrar-representante/registrar-representante.component";
 import { CatalogoComponent } from './comprar/productos/catalogo/catalogo.component';
 import { ProductCardComponent } from './comprar/productos/product-card/product-card/product-card.component';
+import { ProductoCarritoComponent } from "./shopping-cart/producto-carrito/producto-carrito.component";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ProductCardComponent } from './comprar/productos/product-card/product-c
     RegistrarRepresentantePageComponent,
     ShoppingCartPageComponent,
     CatalogoComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductoCarritoComponent
   ],
   imports:[
     CommonModule,

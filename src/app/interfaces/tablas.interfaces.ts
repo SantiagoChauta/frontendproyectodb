@@ -71,3 +71,16 @@ export interface Representante {
   idManager?:     null;
   tipoIdManager?: null;
 }
+
+export interface ProductoCarrito {
+  idCliente:       string;
+  tipodocumento:   string;
+  id_producto:     number;
+  nombre_producto: string;
+  foto:            string;
+  cantidad:        number;
+  precio:          number;
+  iva:             number;
+  id_pais:         number;
+  id_region:       number;
+}

@@ -8,19 +8,9 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   templateUrl:'./login.component.html',
   styleUrls: ['../../app.component.css', './login.component.css']
  })
- export class LoginPageComponent implements OnInit{
+ export class LoginPageComponent{
 
   constructor( private usuarioService:UsuarioService,private router:Router){}
-
-  private usuario:Usuario[];
-
-  ngOnInit(): void {
-    this.usuarioService.getUsuarios().subscribe(
-      usuario => {
-        this.usuario = usuario
-      }
-    )
-  }
 
   @ViewChild('user')
   private user:ElementRef<HTMLInputElement>;
@@ -29,22 +19,18 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   private password:ElementRef<HTMLInputElement>;
 
   iniciarSesion(){
-    const us = this.user.nativeElement.value;
+    const usuario=this.user.nativeElement.value;
     const pass = this.password.nativeElement.value;
-    this.usuario.forEach(element => {
-      if(us == element.usuario){
-        this.usuarioService.conectarse(us,pass).subscribe(
-          response =>{
-            this.router.navigate(['home'])
-            console.log("la respuesta es"+response)
-          },
-          error =>{
-            alert("Usuario o Contraseña incorrecta")
-          }
-        )
-
+    this.usuarioService.conectarse(usuario,pass).subscribe(
+      response =>{
+        this.router.navigate(['home'])
+      },
+      error =>{
+        alert("Usuario o contraseña invalida")
       }
-    });
+    )
+
+
   }
 
  }

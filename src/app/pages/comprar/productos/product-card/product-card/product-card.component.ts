@@ -11,4 +11,7 @@ export class ProductCardComponent {
   @Input()
   public producto:Producto;
 
+  valor(){
+    console.log(this.producto);
+  }
 }

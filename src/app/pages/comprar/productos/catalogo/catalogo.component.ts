@@ -11,5 +11,4 @@ export class CatalogoComponent {
   @Input()
   public productos:Producto[];
 
-
 }
