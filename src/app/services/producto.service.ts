@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Pedido, Producto, ProductoCarrito } from 'src/app/interfaces/tablas.interfaces';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ export class ProductoService {
   constructor(private http:HttpClient) { }
 
   private urlEndPoint:String = "http://localhost:8080";
+
 
   getProductosCategoria(id_region:number,id_pais:number,id_categoria:number):Observable<Producto[]>{
 
@@ -32,7 +33,8 @@ export class ProductoService {
     return this.http.post<Boolean>(`${this.urlEndPoint}/carrito/estado`,producto);
   }
 
-  pagarCarrito(value:number):Observable<Boolean>{
+  pagar(value:number):Observable<Boolean>{
+
     const params = {
       calificacion:value
     }
