@@ -37,7 +37,14 @@ export class ShoppingCartPageComponent implements OnInit{
 
   pagar(){
     //aqui debe ir la peticion al servicio de la otra base de datos
-    this.productoService.pagar(parseInt(this.calificacion.nativeElement.value))
+    this.productoService.pagar(parseInt(this.calificacion.nativeElement.value)).subscribe(
+      response =>{
+        console.log(response)
+      },
+      error =>{
+        console.log(error.error)
+      }
+    )
     console.log(this.calificacion.nativeElement.value)
   }
 }
