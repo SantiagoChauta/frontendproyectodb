@@ -32,9 +32,12 @@ export class ProductoService {
     return this.http.post<Boolean>(`${this.urlEndPoint}/carrito/estado`,producto);
   }
 
-  pagar(calificacion:number){
-    console.log("enviando datos")
-    return this.http.post<Boolean>(`${this.urlEndPoint}/carrito/pagar?`,calificacion)
+  pagarCarrito(value:number):Observable<Boolean>{
+    const params = {
+      calificacion:value
+    }
+
+    return this.http.post<Boolean>(`${this.urlEndPoint}/carrito/pagar?calificacion=${value}`, {params});
   }
 
 }

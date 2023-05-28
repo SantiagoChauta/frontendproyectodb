@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ProductoCarrito } from 'src/app/interfaces/tablas.interfaces';
+import { ProductoCarrito, Pedido } from 'src/app/interfaces/tablas.interfaces';
 import { ProductoService } from 'src/app/services/producto.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class ShoppingCartPageComponent implements OnInit{
   constructor(private productoService:ProductoService){}
 
   productos:ProductoCarrito[];
+  pedido:Pedido
   total:number=0;
 
   @ViewChild('calificacion')
@@ -37,7 +38,7 @@ export class ShoppingCartPageComponent implements OnInit{
 
   pagar(){
     //aqui debe ir la peticion al servicio de la otra base de datos
-    this.productoService.pagar(parseInt(this.calificacion.nativeElement.value))
+    this.productoService.pagarCarrito(parseInt(this.calificacion.nativeElement.value))
     console.log(this.calificacion.nativeElement.value)
   }
 }
