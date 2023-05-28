@@ -84,3 +84,13 @@ export interface ProductoCarrito {
   id_pais:         number;
   id_region:       number;
 }
+
+export interface Pedido {
+  id_pedido:    number;
+  total:        number;
+  calificacion: number;
+  estado:       string;
+  fecha:        string;
+  id_cliente:   string;
+  tipo_idcli:   string;
+}

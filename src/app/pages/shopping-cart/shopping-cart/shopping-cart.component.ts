@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductoCarrito } from 'src/app/interfaces/tablas.interfaces';
 import { ProductoService } from 'src/app/services/producto.service';
 
@@ -14,6 +14,8 @@ export class ShoppingCartPageComponent implements OnInit{
   productos:ProductoCarrito[];
   total:number=0;
 
+  @ViewChild('calificacion')
+  calificacion : ElementRef<HTMLInputElement>;
 
   ngOnInit(): void {
     this.productoService.getProductosCarrito().subscribe(
@@ -25,9 +27,6 @@ export class ShoppingCartPageComponent implements OnInit{
         alert(error.error)
       }
     )
-
-
-
   }
 
   calcularTotal(){
@@ -36,4 +35,9 @@ export class ShoppingCartPageComponent implements OnInit{
     });
   }
 
+  pagar(){
+    //aqui debe ir la peticion al servicio de la otra base de datos
+    this.productoService.pagar(parseInt(this.calificacion.nativeElement.value))
+    console.log(this.calificacion.nativeElement.value)
+  }
 }

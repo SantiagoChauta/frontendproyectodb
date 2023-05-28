@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Producto, ProductoCarrito } from 'src/app/interfaces/tablas.interfaces';
+import { Pedido, Producto, ProductoCarrito } from 'src/app/interfaces/tablas.interfaces';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -26,6 +26,15 @@ export class ProductoService {
 
     return this.http.get<ProductoCarrito[]>(`${this.urlEndPoint}/carrito/listar`);
 
+  }
+
+  agregarProducto(producto:Producto):Observable<Boolean>{
+    return this.http.post<Boolean>(`${this.urlEndPoint}/carrito/estado`,producto);
+  }
+
+  pagar(calificacion:number){
+    console.log("enviando datos")
+    return this.http.post<Boolean>(`${this.urlEndPoint}/carrito/pagar?`,calificacion)
   }
 
 }

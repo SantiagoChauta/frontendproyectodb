@@ -15,16 +15,14 @@
               <div class="aside"><img [src]="producto.foto" class="img-sm"></div>
           </figure>
       </td>
-      <td> <select class="form-control">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-          </select> </td>
+      <td> 
+        {{producto.cantidad}}
       <td>
           <div class="price-wrap"> <var class="price">${{producto.precio}}</var> <small class="text-muted"> {{producto.precio + producto.precio*producto.iva}} con IVA </small> </div>
       </td>
-      <td class="text-right d-none d-md-block">  <a  class="btn btn-light" data-abc="true"> Remove</a> </td>
+      <td class="text-right d-none d-md-block">  
+        <a  class="btn btn-light" data-abc="true"> Remove</a> 
+      </td>
     </tr>
   </tbody>
 </table>

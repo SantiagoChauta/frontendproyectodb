@@ -17,7 +17,21 @@
                       <dt>Total price:</dt>
                       <dd class="text-right ml-3">${{total}}</dd>
                   </dl>
-                  <hr> <a class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Comprar </a> <a href="/comprar" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Seguir Comprando</a>
+                  <dl class="dlist-align">
+                    <dt>Califica a tu Representante</dt>
+                    <dd class="text-right ml-3">
+                        <select #calificacion>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </dd>
+                </dl>
+                  <hr> 
+                  <a class="btn btn-out btn-primary btn-square btn-main" data-abc="true" (click)="pagar()"> Comprar </a> 
+                  <a href="/comprar" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Seguir Comprando</a>
               </div>
           </div>
       </aside>
