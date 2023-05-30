@@ -42,14 +42,14 @@ export class ProductoService {
     return this.http.post<Boolean>(`${this.urlEndPoint}/carrito/pagar?calificacion=${value}`, {params});
   }
 
-  eliminar(value:number):Observable<Boolean>{
+  eliminar(value:number){
     console.log("envia datos pa eliminar")
     console.log(value)
     const params = {
       producto:value
     }
 
-    return this.http.delete<Boolean>(`http://localhost:8080/carrito/eliminar?producto=${value}`, {params});
+    return this.http.delete(`http://localhost:8080/carrito/eliminar?producto=${value}`, {params});
   }
 
 }
