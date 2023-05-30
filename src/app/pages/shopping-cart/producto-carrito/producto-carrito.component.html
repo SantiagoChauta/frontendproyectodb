@@ -21,7 +21,7 @@
           <div class="price-wrap"> <var class="price">${{producto.precio}}</var> <small class="text-muted"> {{producto.precio + producto.precio*producto.iva}} con IVA </small> </div>
       </td>
       <td class="text-right d-none d-md-block">  
-        <a  class="btn btn-light" data-abc="true"> Remove</a> 
+        <a  class="btn btn-light" (click)="borrar(producto.id_producto)" > Eliminar</a> 
       </td>
     </tr>
   </tbody>
